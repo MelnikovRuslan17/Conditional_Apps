@@ -9,14 +9,14 @@ import ru.netology.conditional_apps.systemProfile.SystemProfile;
 @Configuration
 public class JavaConfig {
     @Bean
-    @ConditionalOnProperty(value = "netology.profile.dev", havingValue = "true")
+    @ConditionalOnProperty(name = "netology.profile.dev", havingValue = "true")
     public SystemProfile devProfile(){
         return new DevProfile();
     }
 
 
     @Bean
-    @ConditionalOnProperty(value = "netology.profile.dev", havingValue = "false")
+    @ConditionalOnProperty(name = "netology.profile.dev", havingValue = "false")
     public SystemProfile prodProfile(){
         return new ProductionProfile();
     }
